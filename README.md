@@ -23,6 +23,14 @@ This project utilizes JavaScript and React framework to maintain the front-end. 
 
 ## Credit and Collaborations
 
+Worked with Zoe Gonzalez and Hunter Fehr to create the WRRC mappings.
+
+## Web Request Response Cycle
+
+## Class 06
+
+![WRRC chart between Client and API](/wrrc/class-06.png)
+
 ## Time Estimates
 
 ### Class 06
