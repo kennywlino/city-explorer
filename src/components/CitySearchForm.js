@@ -2,6 +2,7 @@ import React from 'react';
 import axios from 'axios';
 
 import CityDisplay from './CityDisplay';
+import ErrorDisplay from './ErrorDisplay';
 
 class CitySearchForm extends React.Component {
     constructor(props) {
@@ -10,8 +11,21 @@ class CitySearchForm extends React.Component {
             city : '',
             cityData: [],
             error: false,
-            errorMessage: ''
+            errorMessage: '',
+            showErrorDisplay: false
         }
+    }
+
+    handOpenErrorDisplay = () => {
+        this.setState({
+            showErrorDisplay: true
+        })
+    }
+
+    handleCloseErrorDisplay = () => {
+        this.setState({
+            showErrorDisplay: false
+        })
     }
 
     getCityData = async (event) => {
@@ -24,12 +38,11 @@ class CitySearchForm extends React.Component {
                 cityData: cityData.data[0],
                 error: false,
             })
-            console.log(cityData.data[0]);
-
         } catch(error) {
             this.setState({
                 error: true,
-                errorMessage: error.message
+                errorMessage: error.message,
+                showErrorDisplay: true
             })
         }
     }
@@ -45,7 +58,7 @@ class CitySearchForm extends React.Component {
         return (
             <>
                 <form onSubmit={this.getCityData}>
-                    <label>Enter a city:
+                    <label>Enter a location:
                         <input type="text" onInput={this.handleInput}/>
                         <button type="submit">Explore!</button>
                     </label>
@@ -54,12 +67,18 @@ class CitySearchForm extends React.Component {
                     this.state.city !== '' && this.state.cityData.length !== 0 && !this.state.error
                     ?
                     <CityDisplay
-                        cityData= {this.state.cityData}
+                        cityData={this.state.cityData}
                     /> 
                     :
-                    <p>{this.state.errorMessage}</p>    
+                    this.state.city !== '' && this.state.error 
+                    ?
+                    <ErrorDisplay
+                        errorMessage={this.state.errorMessage}
+                        showErrorDisplay={this.state.showErrorDisplay}
+                    />
+                    :
+                    <></>
                 }
-                {console.log(this.state.cityData)}
             </>
         );
     }
