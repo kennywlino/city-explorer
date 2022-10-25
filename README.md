@@ -19,7 +19,7 @@ This project utilizes JavaScript and React framework to maintain the front-end. 
 
 ## Change log
 
-10-24-2022 --
+10-24-2022 -- Added basic query to show image of map, longitude and latitude. Also catches and errors from API call.
 
 ## Credit and Collaborations
 
@@ -31,5 +31,6 @@ This project utilizes JavaScript and React framework to maintain the front-end. 
 | --- | ------------------------------------ | -------------------- | ---------- | ----------- | ----------------- |
 | 1   | Set up React repository and API keys | 0:30                 | 2:20pm     | 3:00pm      | 0:40              |
 | 2   | Location: set-up query               | 0:45                 | 3:45pm     | 4:40pm      | 0:55              |
-| 3   | Map: set-up display                  | 0:30                 |            |             |                   |
-| 4   | Errors: catch any errors             | 0:30                 | 5:20pm     |             |                   |
+| 3   | Map: set-up display                  | 0:30                 | 6:20pm     | 7:20pm      | 1:00              |
+| 4   | Errors: catch any errors             | 0:30                 | 5:20pm     | 6:00pm      | 0:40              |
+

@@ -4,12 +4,15 @@ import axios from 'axios';
 import CityDisplay from './CityDisplay';
 import ErrorDisplay from './ErrorDisplay';
 
+import './CitySearchForm.css';
+
 class CitySearchForm extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
             city : '',
             cityData: [],
+            mapImageData: '',
             error: false,
             errorMessage: '',
             showErrorDisplay: false
@@ -34,8 +37,13 @@ class CitySearchForm extends React.Component {
         try {
             let url = `https://us1.locationiq.com/v1/search?key=${process.env.REACT_APP_LOCATIONIQ_API_KEY}&q=${this.state.city}&format=json`;
             let cityData = await axios.get(url);
+            let lon = cityData.data[0].lon;
+            let lat = cityData.data[0].lat;
+            let mapImageUrl = `https://maps.locationiq.com/v3/staticmap?key=${process.env.REACT_APP_LOCATIONIQ_API_KEY}&center=${lat},${lon}&zoom=10`;
+            let mapImageData = await axios.get(mapImageUrl);
             this.setState({
                 cityData: cityData.data[0],
+                mapImageData: mapImageData.request.responseURL,
                 error: false,
             })
         } catch(error) {
@@ -68,6 +76,7 @@ class CitySearchForm extends React.Component {
                     ?
                     <CityDisplay
                         cityData={this.state.cityData}
+                        mapImageData={this.state.mapImageData}
                     /> 
                     :
                     this.state.city !== '' && this.state.error 
