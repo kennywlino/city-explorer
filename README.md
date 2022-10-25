@@ -30,6 +30,6 @@ This project utilizes JavaScript and React framework to maintain the front-end. 
 | #   | Name of feature                      | Estimated time (h:m) | Start time | Finish time | Actual time (h:m) |
 | --- | ------------------------------------ | -------------------- | ---------- | ----------- | ----------------- |
 | 1   | Set up React repository and API keys | 0:30                 | 2:20pm     | 3:00pm      | 0:40              |
-| 2   | Location: set-up query               | 0:45                 | 3:45pm     |             |                   |
+| 2   | Location: set-up query               | 0:45                 | 3:45pm     | 4:40pm      | 0:55              |
 | 3   | Map: set-up display                  | 1:00                 |            |             |                   |
 | 4   | Errors: catch any errors             |                      |            |             |                   |

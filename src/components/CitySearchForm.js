@@ -40,7 +40,7 @@ class CitySearchForm extends React.Component {
             city: event.target.value
         })
     }
-
+    
     render() {
         return (
             <>
@@ -51,7 +51,7 @@ class CitySearchForm extends React.Component {
                     </label>
                 </form>
                 {
-                    this.state.city !== '' && this.state.error
+                    this.state.city !== '' && this.state.cityData.length !== 0 && !this.state.error
                     ?
                     <CityDisplay
                         cityData= {this.state.cityData}
@@ -59,7 +59,7 @@ class CitySearchForm extends React.Component {
                     :
                     <p>{this.state.errorMessage}</p>    
                 }
-                {console.log(this.state.city)}
+                {console.log(this.state.cityData)}
             </>
         );
     }
