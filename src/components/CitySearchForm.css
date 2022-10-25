@@ -1,0 +1,6 @@
+form label {
+    display: flex;
+    gap: 5px;
+    justify-content: center;
+    color: white;
+}

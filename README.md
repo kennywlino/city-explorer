@@ -1,70 +1,36 @@
-# Getting Started with Create React App
+# City Explorer
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+**Author**: Kenny W. Lino
+**Version**: 1.0.0
 
-## Available Scripts
+## Overview
 
-In the project directory, you can run:
+City Explorer is a React application that uses the Axios HTTP client and the LocationIQ API to allow users to make location-based requests and display them.
 
-### `npm start`
+## Getting Started
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+In order to get started, you can visit the deployed version at: [city-explorer-kwl-cf.netlify.app](https://city-explorer-kwl-cf.netlify.app)
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+You also can deploy it locally by downloading this repo and using `npm install` to install the dependencies and `npm start` to run the React application.
 
-### `npm test`
+## Architecture
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+This project utilizes JavaScript and React framework to maintain the front-end. The Axios library is used to handle the HTTP requests and the LocationIQ API is used for data.
 
-### `npm run build`
+## Change log
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+10-24-2022 -- Added basic query to show image of map, longitude and latitude. Also catches and errors from API call.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Credit and Collaborations
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Time Estimates
 
-### `npm run eject`
+### Class 06
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+| #   | Name of feature                      | Estimated time (h:m) | Start time | Finish time | Actual time (h:m) |
+| --- | ------------------------------------ | -------------------- | ---------- | ----------- | ----------------- |
+| 1   | Set up React repository and API keys | 0:30                 | 2:20pm     | 3:00pm      | 0:40              |
+| 2   | Location: set-up query               | 0:45                 | 3:45pm     | 4:40pm      | 0:55              |
+| 3   | Map: set-up display                  | 0:30                 | 6:20pm     | 7:20pm      | 1:00              |
+| 4   | Errors: catch any errors             | 0:30                 | 5:20pm     | 6:00pm      | 0:40              |
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
