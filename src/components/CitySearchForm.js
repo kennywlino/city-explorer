@@ -1,8 +1,9 @@
 import React from 'react';
 import axios from 'axios';
 
-import CityDisplay from './CityDisplay';
-import ErrorDisplay from './ErrorDisplay';
+import CityDisplay from './CityDisplay.js';
+import ErrorDisplay from './ErrorDisplay.js';
+import Weather from './Weather.js';
 
 import './CitySearchForm.css';
 
@@ -13,6 +14,7 @@ class CitySearchForm extends React.Component {
             city : '',
             cityData: [],
             mapImageData: '',
+            forecastData: [],
             error: false,
             errorMessage: '',
             showErrorDisplay: false
@@ -35,15 +37,26 @@ class CitySearchForm extends React.Component {
         event.preventDefault();
 
         try {
-            let url = `https://us1.locationiq.com/v1/search?key=${process.env.REACT_APP_LOCATIONIQ_API_KEY}&q=${this.state.city}&format=json`;
-            let cityData = await axios.get(url);
+            // get city data
+            let cityDataurl = `https://us1.locationiq.com/v1/search?key=${process.env.REACT_APP_LOCATIONIQ_API_KEY}&q=${this.state.city}&format=json`;
+            let cityData = await axios.get(cityDataurl);
             let lon = cityData.data[0].lon;
             let lat = cityData.data[0].lat;
+
+            // get map image
             let mapImageUrl = `https://maps.locationiq.com/v3/staticmap?key=${process.env.REACT_APP_LOCATIONIQ_API_KEY}&center=${lat},${lon}&zoom=10`;
             let mapImageData = await axios.get(mapImageUrl);
+
+            // get forecast data from our API
+            // commenting out this URL as the lat/lon values do not match completely with the sample data
+            // let forecastUrl = `${process.env.REACT_APP_SERVER}/weather?searchQuery=${this.state.city}&lat=${lat}&lon=${lon}`;
+            let forecastUrl = `${process.env.REACT_APP_SERVER}/weather?searchQuery=${this.state.city}`;
+            let forecastData = await axios.get(forecastUrl);
+
             this.setState({
                 cityData: cityData.data[0],
                 mapImageData: mapImageData.request.responseURL,
+                forecastData: forecastData.data,
                 error: false,
             })
         } catch(error) {
@@ -74,10 +87,15 @@ class CitySearchForm extends React.Component {
                 {
                     this.state.city !== '' && this.state.cityData.length !== 0 && !this.state.error
                     ?
-                    <CityDisplay
-                        cityData={this.state.cityData}
-                        mapImageData={this.state.mapImageData}
-                    /> 
+                    <div className='info-cards'>
+                        <CityDisplay
+                            cityData={this.state.cityData}
+                            mapImageData={this.state.mapImageData}
+                        />
+                        <Weather
+                            forecastData={this.state.forecastData}
+                        />
+                    </div>
                     :
                     this.state.city !== '' && this.state.error 
                     ?

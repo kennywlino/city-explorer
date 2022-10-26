@@ -1,7 +1,8 @@
 # City Explorer
 
 **Author**: Kenny W. Lino
-**Version**: 1.0.0
+
+**Version**: 1.0.1
 
 ## Overview
 
@@ -19,6 +20,7 @@ This project utilizes JavaScript and React framework to maintain the front-end. 
 
 ## Change log
 
+10-25-2022 -- Integrated City Explorer API to query for weather data and display
 10-24-2022 -- Added basic query to show image of map, longitude and latitude. Also catches and errors from API call.
 
 ## Credit and Collaborations
@@ -27,11 +29,24 @@ Worked with Zoe Gonzalez and Hunter Fehr to create the WRRC mappings.
 
 ## Web Request Response Cycle
 
+## Class 07
+
+![WRRC chart between Client/LocationIQ API/Our Server](/wrrc/class-07.png)
+
 ## Class 06
 
-![WRRC chart between Client and API](/wrrc/class-06.png)
+![WRRC chart between Client and LocationIQ API](/wrrc/class-06.png)
 
 ## Time Estimates
+
+### Class 07
+
+| #   | Name of feature   | Estimated time (h:m) | Start time | Finish time | Actual time (h:m) |
+| --- | ----------------- | -------------------- | ---------- | ----------- | ----------------- |
+| 2   | Weather front-end | 1:00                 | 4:35pm     | 5:55pm      | 1:20              |
+|     |                   |                      |            |             |                   |
+|     |                   |                      |            |             |                   |
+|     |                   |                      |            |             |                   |
 
 ### Class 06
 
@@ -41,4 +56,3 @@ Worked with Zoe Gonzalez and Hunter Fehr to create the WRRC mappings.
 | 2   | Location: set-up query               | 0:45                 | 3:45pm     | 4:40pm      | 0:55              |
 | 3   | Map: set-up display                  | 0:30                 | 6:20pm     | 7:20pm      | 1:00              |
 | 4   | Errors: catch any errors             | 0:30                 | 5:20pm     | 6:00pm      | 0:40              |
-
