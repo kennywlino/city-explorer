@@ -20,7 +20,7 @@ This project utilizes JavaScript and React framework to maintain the front-end. 
 
 ## Change log
 
-10-25-2022 -- Integrated City Explorer API to query for weather data and display
+10-25-2022 -- Integrated City Explorer API to query for weather data and display.
 10-24-2022 -- Added basic query to show image of map, longitude and latitude. Also catches and errors from API call.
 
 ## Credit and Collaborations

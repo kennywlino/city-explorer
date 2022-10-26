@@ -33,9 +33,13 @@ class CitySearchForm extends React.Component {
         })
     }
 
-    getCityData = async (event) => {
+    getAllCityData = (event) => {
         event.preventDefault();
+        this.getMapData();
+        this.getForecastData();
+    };
 
+    getMapData = async () => {
         try {
             // get city data
             let cityDataurl = `https://us1.locationiq.com/v1/search?key=${process.env.REACT_APP_LOCATIONIQ_API_KEY}&q=${this.state.city}&format=json`;
@@ -44,19 +48,12 @@ class CitySearchForm extends React.Component {
             let lat = cityData.data[0].lat;
 
             // get map image
-            let mapImageUrl = `https://maps.locationiq.com/v3/staticmap?key=${process.env.REACT_APP_LOCATIONIQ_API_KEY}&center=${lat},${lon}&zoom=10`;
+            let mapImageUrl = `https://maps.locationiq.com/v3/staticmap?key=${process.env.REACT_APP_LOCATIONIQ_API_KEY}&center=${lat},${lon}&zoom=12`;
             let mapImageData = await axios.get(mapImageUrl);
-
-            // get forecast data from our API
-            // commenting out this URL as the lat/lon values do not match completely with the sample data
-            // let forecastUrl = `${process.env.REACT_APP_SERVER}/weather?searchQuery=${this.state.city}&lat=${lat}&lon=${lon}`;
-            let forecastUrl = `${process.env.REACT_APP_SERVER}/weather?searchQuery=${this.state.city}`;
-            let forecastData = await axios.get(forecastUrl);
 
             this.setState({
                 cityData: cityData.data[0],
                 mapImageData: mapImageData.request.responseURL,
-                forecastData: forecastData.data,
                 error: false,
             })
         } catch(error) {
@@ -65,6 +62,26 @@ class CitySearchForm extends React.Component {
                 errorMessage: error.message,
                 showErrorDisplay: true
             })
+        }
+    }
+
+    getForecastData = async () => {
+        try {
+            // commenting out this URL as the lat/lon values do not match completely with the sample data
+            // let forecastUrl = `${process.env.REACT_APP_SERVER}/weather?searchQuery=${this.state.city}&lat=${lat}&lon=${lon}`;
+            let forecastUrl = `${process.env.REACT_APP_SERVER}/weather?searchQuery=${this.state.city}`;
+            let forecastData = await axios.get(forecastUrl);
+            
+            this.setState({
+                forecastData: forecastData.data,
+                error: false,
+            })
+        } catch(error) {
+            this.setState({
+                error: true,
+                errorMessage: error.message,
+                showErrorDisplay: true
+            }) 
         }
     }
 
@@ -78,7 +95,7 @@ class CitySearchForm extends React.Component {
     render() {
         return (
             <>
-                <form onSubmit={this.getCityData}>
+                <form onSubmit={this.getAllCityData}>
                     <label>Enter a location:
                         <input type="text" onInput={this.handleInput}/>
                         <button type="submit">Explore!</button>
