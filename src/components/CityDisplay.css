@@ -1,9 +1,5 @@
-div.card {
-    display: flex;
-    align-items: center;
-}
-
-card div.card-header {
+div.card div.card-header {
     display: flex;
     justify-content: center;
+    font-size: 120%;
 }

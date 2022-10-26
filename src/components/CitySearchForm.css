@@ -4,3 +4,9 @@ form label {
     justify-content: center;
     color: white;
 }
+
+div.info-cards {
+    display: flex;
+    align-items: center;
+    gap: 2em;
+}
