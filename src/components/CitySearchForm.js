@@ -4,6 +4,7 @@ import axios from 'axios';
 import CityDisplay from './CityDisplay.js';
 import ErrorDisplay from './ErrorDisplay.js';
 import Weather from './Weather.js';
+import Movie from './Movie.js';
 
 import './CitySearchForm.css';
 
@@ -15,6 +16,7 @@ class CitySearchForm extends React.Component {
             cityData: [],
             mapImageData: '',
             forecastData: [],
+            movieData: [],
             error: false,
             errorMessage: '',
             showErrorDisplay: false
@@ -50,7 +52,10 @@ class CitySearchForm extends React.Component {
                 cityData: cityData.data[0],
                 mapImageData: mapImageData.request.responseURL,
                 error: false,
-            }, () => this.getForecastData());
+            }, () => {
+                this.getForecastData();
+                this.getMovieData();
+            });
         } catch(error) {
             this.setState({
                 error: true,
@@ -80,6 +85,24 @@ class CitySearchForm extends React.Component {
         }
     }
 
+    getMovieData = async () => {
+        try {
+            let movieUrl = `${process.env.REACT_APP_SERVER}/movies?searchQuery=${this.state.city}`;
+            let movieData = await axios.get(movieUrl);
+            this.setState({
+                movieData: movieData  
+            })
+
+        } catch(error) {
+            this.setState({
+                error: true,
+                errorMessage: error.message,
+                showErrorDisplay: true
+            })
+
+        }
+    }
+
     handleInput = (event) => {
         event.preventDefault();
         this.setState({
@@ -97,17 +120,27 @@ class CitySearchForm extends React.Component {
                     </label>
                 </form>
                 {
-                    this.state.city !== '' && this.state.cityData.length !== 0 && !this.state.error
+                    this.state.city !== '' && 
+                    this.state.cityData.length !== 0 && 
+                    this.state.mapImageData !== '' && 
+                    this.state.forecastData.length !== 0 &&
+                    this.state.movieData.length !== 0 &&
+                    !this.state.error
                     ?
-                    <div className='info-cards'>
-                        <CityDisplay
-                            cityData={this.state.cityData}
-                            mapImageData={this.state.mapImageData}
-                        />
-                        <Weather
-                            forecastData={this.state.forecastData}
-                        />
-                    </div>
+                    <>
+                        <div className='info-cards'>
+                            <CityDisplay
+                                cityData={this.state.cityData}
+                                mapImageData={this.state.mapImageData}
+                            />
+                            <Weather
+                                forecastData={this.state.forecastData}
+                            />
+                            <Movie
+                                movieData={this.state.movieData}
+                                /> 
+                        </div>
+                    </>
                     :
                     this.state.city !== '' && this.state.error 
                     ?

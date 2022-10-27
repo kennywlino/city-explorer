@@ -36,7 +36,6 @@ Worked with Zoe Gonzalez and Hunter Fehr to create the WRRC mappings.
 
 ## Class 07
 
-
 ![WRRC chart between Client/LocationIQ API/Our Server](/wrrc/class-07.png)
 
 ## Class 06
@@ -47,14 +46,15 @@ Worked with Zoe Gonzalez and Hunter Fehr to create the WRRC mappings.
 
 ## Class 08
 
+| #   | Name of feature  | Estimated time (h:m) | Start time | Finish time | Actual time (h:m) |
+| --- | ---------------- | -------------------- | ---------- | ----------- | ----------------- |
+| 2   | Movies front-end | 1:00                 | 7:15pm     | 8:45pm      | 1:30              |
+
 ### Class 07
 
 | #   | Name of feature   | Estimated time (h:m) | Start time | Finish time | Actual time (h:m) |
 | --- | ----------------- | -------------------- | ---------- | ----------- | ----------------- |
 | 2   | Weather front-end | 1:00                 | 4:35pm     | 5:55pm      | 1:20              |
-|     |                   |                      |            |             |                   |
-|     |                   |                      |            |             |                   |
-|     |                   |                      |            |             |                   |
 
 ### Class 06
 
