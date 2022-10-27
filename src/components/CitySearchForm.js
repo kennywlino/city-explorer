@@ -4,7 +4,7 @@ import axios from 'axios';
 import CityDisplay from './CityDisplay.js';
 import ErrorDisplay from './ErrorDisplay.js';
 import Weather from './Weather.js';
-import Movie from './Movie.js';
+import Movies from './Movies.js';
 
 import './CitySearchForm.css';
 
@@ -136,7 +136,7 @@ class CitySearchForm extends React.Component {
                             <Weather
                                 forecastData={this.state.forecastData}
                             />
-                            <Movie
+                            <Movies
                                 movieData={this.state.movieData}
                                 /> 
                         </div>
