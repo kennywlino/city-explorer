@@ -2,7 +2,7 @@
 
 **Author**: Kenny W. Lino
 
-**Version**: 1.0.1
+**Version**: 1.0.2
 
 ## Overview
 
@@ -20,7 +20,8 @@ This project utilizes JavaScript and React framework to maintain the front-end. 
 
 ## Change log
 
-10-25-2022 -- Integrated City Explorer API to query for weather data and display
+10-26-2022 -- Integrated WeatherBit IO API and Movie DB API to display actual data.
+10-25-2022 -- Integrated City Explorer API to query for weather data and display using mock data.
 10-24-2022 -- Added basic query to show image of map, longitude and latitude. Also catches and errors from API call.
 
 ## Credit and Collaborations
@@ -28,6 +29,10 @@ This project utilizes JavaScript and React framework to maintain the front-end. 
 Worked with Zoe Gonzalez and Hunter Fehr to create the WRRC mappings.
 
 ## Web Request Response Cycle
+
+## Class 08
+
+![WRRC chart between Client/LocationIQ API/Our Server/WeatherBit IO API/Movie DB API](/wrrc/class-08.png)
 
 ## Class 07
 
@@ -39,14 +44,17 @@ Worked with Zoe Gonzalez and Hunter Fehr to create the WRRC mappings.
 
 ## Time Estimates
 
+## Class 08
+
+| #   | Name of feature  | Estimated time (h:m) | Start time | Finish time | Actual time (h:m) |
+| --- | ---------------- | -------------------- | ---------- | ----------- | ----------------- |
+| 2   | Movies front-end | 1:00                 | 7:15pm     | 8:45pm      | 1:30              |
+
 ### Class 07
 
 | #   | Name of feature   | Estimated time (h:m) | Start time | Finish time | Actual time (h:m) |
 | --- | ----------------- | -------------------- | ---------- | ----------- | ----------------- |
 | 2   | Weather front-end | 1:00                 | 4:35pm     | 5:55pm      | 1:20              |
-|     |                   |                      |            |             |                   |
-|     |                   |                      |            |             |                   |
-|     |                   |                      |            |             |                   |
 
 ### Class 06
 
