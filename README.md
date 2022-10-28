@@ -2,7 +2,7 @@
 
 **Author**: Kenny W. Lino
 
-**Version**: 1.0.2
+**Version**: 1.0.3
 
 ## Overview
 
@@ -20,8 +20,12 @@ This project utilizes JavaScript and React framework to maintain the front-end. 
 
 ## Change log
 
+10-27-2022 -- Created Movie.js and WeatherDay.js components to better modularize the code.
+
 10-26-2022 -- Integrated WeatherBit IO API and Movie DB API to display actual data.
+
 10-25-2022 -- Integrated City Explorer API to query for weather data and display using mock data.
+
 10-24-2022 -- Added basic query to show image of map, longitude and latitude. Also catches and errors from API call.
 
 ## Credit and Collaborations
@@ -44,11 +48,17 @@ Worked with Zoe Gonzalez and Hunter Fehr to create the WRRC mappings.
 
 ## Time Estimates
 
+## Class 09
+
+| #   | Name of feature                   | Estimated time (h:m) | Start time | Finish time | Actual time (h:m) |
+| --- | --------------------------------- | -------------------- | ---------- | ----------- | ----------------- |
+| 1   | Refactor Movies.js and Weather.js | 0:45                 | 3:25pm     | 4:00pm      | 0:35              |
+
 ## Class 08
 
 | #   | Name of feature  | Estimated time (h:m) | Start time | Finish time | Actual time (h:m) |
 | --- | ---------------- | -------------------- | ---------- | ----------- | ----------------- |
-| 2   | Movies front-end | 1:00                 | 7:15pm     | 8:45pm      | 1:30              |
+| 1   | Movies front-end | 1:00                 | 7:15pm     | 8:45pm      | 1:30              |
 
 ### Class 07
 

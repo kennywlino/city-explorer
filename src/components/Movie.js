@@ -2,47 +2,37 @@ import React from 'react';
 
 import Carousel from 'react-bootstrap/Carousel';
 import MoviePlaceholderImg from  '../assets/jill-marv-N9uGYWS7Bak-unsplash.jpeg';
-import './Movie.css';
 
 class Movie extends React.Component {
     render() {
-        let movieCarouselComponents = this.props.movieData.data.map(movie => {
-           // let imageSrc = movie.poster_path ? movie.poster_path : 'logo512.png';
-           let imageSrc = '';
-           if (movie.poster_path) {
-            imageSrc = movie.poster_path;
-           } else if (movie.backdrop_path) {
-            imageSrc = movie.backdrop_path;
+        let imageSrc = '';
+           if (this.props.data.poster_path) {
+            imageSrc = this.props.data.poster_path;
+           } else if (this.props.data.backdrop_path) {
+            imageSrc = this.props.data.backdrop_path;
            } else {
             imageSrc = MoviePlaceholderImg;
            }
+
+           const {
+            key, data, ...rest 
+           } = this.props
+
             return (
-            <Carousel.Item>
+            <Carousel.Item {...rest} key={this.props.key}>
                 <img 
                     className="dblock w-100"
                     src={imageSrc}
-                    alt={movie.title}
+                    alt={this.props.data.title}
                 
                 />
                 <Carousel.Caption>
-                    <h2>{movie.title}</h2>
-                   <p>{movie.overview}</p>
+                    <h2>{this.props.data.title}</h2>
+                   <p>{this.props.data.overview}</p>
                 </Carousel.Caption>
             </Carousel.Item>
-            )});
-
-        return (
-            <>
-                <Carousel>
-                    {movieCarouselComponents}
-                </Carousel>
-            </>
         );
     }
 }
 
-
 export default Movie;
-
-// <h1>{this.props.movieData.data[0].title}</h1>
-// <p>{this.props.movieData.data[0].overview}</p>
