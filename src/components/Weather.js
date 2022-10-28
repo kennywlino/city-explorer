@@ -14,13 +14,12 @@ class Weather extends React.Component {
                 data={element}
                 key={index}
             />
-        )
-    });
+        )});
     return (
         <Card style={ { width: '18rem' } }>
             <Card.Header className="fw-bold">Weather</Card.Header>
             <ListGroup variant="flush">
-            {forecastDataComponents};
+            {forecastDataComponents}
             </ListGroup>
         </Card>
     );

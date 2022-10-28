@@ -2,7 +2,7 @@
 
 **Author**: Kenny W. Lino
 
-**Version**: 1.0.2
+**Version**: 1.0.3
 
 ## Overview
 
@@ -19,6 +19,8 @@ You also can deploy it locally by downloading this repo and using `npm install` 
 This project utilizes JavaScript and React framework to maintain the front-end. The Axios library is used to handle the HTTP requests and the LocationIQ API is used for data.
 
 ## Change log
+
+10-27-2022 -- Created Movie.js and WeatherDay.js components to better modularize the code.
 
 10-26-2022 -- Integrated WeatherBit IO API and Movie DB API to display actual data.
 
@@ -50,7 +52,7 @@ Worked with Zoe Gonzalez and Hunter Fehr to create the WRRC mappings.
 
 | #   | Name of feature                   | Estimated time (h:m) | Start time | Finish time | Actual time (h:m) |
 | --- | --------------------------------- | -------------------- | ---------- | ----------- | ----------------- |
-| 1   | Refactor Movies.js and Weather.js | 0:45                 | 3:25pm     |             |                   |
+| 1   | Refactor Movies.js and Weather.js | 0:45                 | 3:25pm     | 4:00pm      | 0:35              |
 
 ## Class 08
 
