@@ -2,7 +2,7 @@
 
 **Author**: Kenny W. Lino
 
-**Version**: 1.0.3
+**Version**: 1.0.4
 
 ## Overview
 
@@ -20,6 +20,8 @@ This project utilizes JavaScript and React framework to maintain the front-end. 
 
 ## Change log
 
+10-28-2022 -- Included a cache to store data locally which only updates when data becomes stale.
+
 10-27-2022 -- Created Movie.js and WeatherDay.js components to better modularize the code.
 
 10-26-2022 -- Integrated WeatherBit IO API and Movie DB API to display actual data.
@@ -33,6 +35,10 @@ This project utilizes JavaScript and React framework to maintain the front-end. 
 Worked with Zoe Gonzalez and Hunter Fehr to create the WRRC mappings.
 
 ## Web Request Response Cycle
+
+## Class 10
+
+![WRRC chart between Client/LocationIQ API/Our Server/WeatherBit IO API/Movie DB API with cache](/wrrc/class-10.png)
 
 ## Class 08
 
