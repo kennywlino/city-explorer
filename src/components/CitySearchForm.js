@@ -43,7 +43,6 @@ class CitySearchForm extends React.Component {
             let cityData = await axios.get(cityDataUrl);
             let lon = cityData.data[0].lon;
             let lat = cityData.data[0].lat;
-
             // get map image
             let mapImageUrl = `https://maps.locationiq.com/v3/staticmap?key=${process.env.REACT_APP_LOCATIONIQ_API_KEY}&center=${lat},${lon}&zoom=14`;
             let mapImageData = await axios.get(mapImageUrl);
